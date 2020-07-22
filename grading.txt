@@ -1,0 +1,48 @@
+
+PLAY [localhost] *****************************************************************************************************************************************************************************
+
+TASK [Create In-memory Inventory] ************************************************************************************************************************************************************
+changed: [localhost]
+
+PLAY [workstation] ***************************************************************************************************************************************************************************
+
+TASK [OpenStack servers] *********************************************************************************************************************************************************************
+ok: [workstation-ddf0.blue.osp.opentlc.com]
+
+TASK [Check if all osp instance exist] *******************************************************************************************************************************************************
+ok: [workstation-ddf0.blue.osp.opentlc.com] => {
+    "msg": "Hello world!"
+}
+
+TASK [debug] *********************************************************************************************************************************************************************************
+ok: [workstation-ddf0.blue.osp.opentlc.com] => {
+    "osp_instance": {
+        "changed": false,
+        "failed": false,
+        "msg": "Hello world!"
+    }
+}
+
+TASK [Access website] ************************************************************************************************************************************************************************
+ok: [workstation-ddf0.blue.osp.opentlc.com] => (item={'id': 'ff8ebd13-3e76-4eb5-9754-048f836ff9d2', 'name': 'frontend', 'flavor': {'vcpus': 1, 'ram': 2048, 'disk': 20, 'ephemeral': 0, 'swap': 0, 'original_name': 'm1.medium', 'extra_specs': {}}, 'image': {'id': '904b2cee-b841-4470-a2d3-983935dcdbae'}, 'block_device_mapping': None, 'location': {'cloud': 'openstack', 'region_name': 'regionOne', 'zone': 'nova', 'project': {'id': '4e07f423a12f437388a97a533bb9eef9', 'name': 'admin', 'domain_id': None, 'domain_name': None}}, 'volumes': [], 'has_config_drive': False, 'host_id': '26c3d8074f9fab9d266b2a9243f2ee4f2531651afc35311e3290a8b2', 'progress': 0, 'disk_config': 'MANUAL', 'power_state': 1, 'task_state': None, 'vm_state': 'active', 'launched_at': '2020-07-22T09:55:12.000000', 'terminated_at': None, 'hypervisor_hostname': 'overcloud-novacompute-1.localdomain', 'instance_name': 'instance-00000008', 'user_data': 'IyEvYmluL2Jhc2gKY3VybCAtbyAvdG1wL29wZW5zdGFjay5wdWIgaHR0cDovL3d3dy5vcGVudGxjLmNvbS9kb3dubG9hZC9hbnNpYmxlX2Jvb3RjYW1wL29wZW5zdGFja19rZXlzL29wZW5zdGFjay5wdWIKY2F0IC90bXAvb3BlbnN0YWNrLnB1YiA+PiAvaG9tZS9jbG91ZC11c2VyLy5zc2gvYXV0aG9yaXplZF9rZXlzCmN1cmwgLW8gL2V0Yy95dW0ucmVwb3MuZC9pbnRlcm5hbC5yZXBvIGh0dHA6Ly93d3cub3BlbnRsYy5jb20vZG93bmxvYWQvYW5zaWJsZV9ib290Y2FtcC9yZXBvL2ludGVybmFsLnJlcG8K', 'host': 'overcloud-novacompute-1.localdomain', 'hostname': 'frontend', 'kernel_id': '', 'launch_index': 0, 'ramdisk_id': '', 'reservation_id': 'r-6exsemst', 'root_device_name': '/dev/vda', 'scheduler_hints': None, 'security_groups': [{'name': 'frontend'}], 'created_at': '2020-07-22T09:54:27Z', 'accessIPv4': '192.0.2.184', 'accessIPv6': '', 'addresses': {'int_network': [{'version': 4, 'addr': '172.16.0.139', 'OS-EXT-IPS:type': 'fixed', 'OS-EXT-IPS-MAC:mac_addr': 'fa:16:3e:ca:4c:18'}, {'version': 4, 'addr': '192.0.2.184', 'OS-EXT-IPS:type': 'floating', 'OS-EXT-IPS-MAC:mac_addr': 'fa:16:3e:ca:4c:18'}]}, 'adminPass': None, 'created': '2020-07-22T09:54:27Z', 'description': 'frontend', 'key_name': 'ansible_ssh', 'metadata': {'group': 'frontends', 'deployment_name': 'QA'}, 'networks': {}, 'personality': None, 'private_v4': '172.16.0.139', 'public_v4': '192.0.2.184', 'public_v6': '', 'server_groups': None, 'status': 'ACTIVE', 'updated': '2020-07-22T09:55:12Z', 'user_id': '407c91c92264417aaec09d86164807fd', 'tags': [], 'interface_ip': '192.0.2.184', 'properties': {'os-extended-volumes:volumes_attached': [], 'OS-EXT-AZ:availability_zone': 'nova', 'OS-EXT-SRV-ATTR:host': 'overcloud-novacompute-1.localdomain', 'OS-DCF:diskConfig': 'MANUAL', 'host_status': 'UP', 'OS-EXT-SRV-ATTR:hostname': 'frontend', 'OS-EXT-SRV-ATTR:hypervisor_hostname': 'overcloud-novacompute-1.localdomain', 'OS-EXT-SRV-ATTR:instance_name': 'instance-00000008', 'locked': False, 'OS-EXT-SRV-ATTR:kernel_id': '', 'OS-EXT-SRV-ATTR:launch_index': 0, 'OS-SRV-USG:launched_at': '2020-07-22T09:55:12.000000', 'OS-EXT-STS:power_state': 1, 'OS-EXT-SRV-ATTR:ramdisk_id': '', 'OS-EXT-SRV-ATTR:reservation_id': 'r-6exsemst', 'OS-EXT-SRV-ATTR:root_device_name': '/dev/vda', 'OS-SCH-HNT:scheduler_hints': None, 'OS-EXT-STS:task_state': None, 'OS-SRV-USG:terminated_at': None, 'trusted_image_certificates': None, 'OS-EXT-SRV-ATTR:user_data': 'IyEvYmluL2Jhc2gKY3VybCAtbyAvdG1wL29wZW5zdGFjay5wdWIgaHR0cDovL3d3dy5vcGVudGxjLmNvbS9kb3dubG9hZC9hbnNpYmxlX2Jvb3RjYW1wL29wZW5zdGFja19rZXlzL29wZW5zdGFjay5wdWIKY2F0IC90bXAvb3BlbnN0YWNrLnB1YiA+PiAvaG9tZS9jbG91ZC11c2VyLy5zc2gvYXV0aG9yaXplZF9rZXlzCmN1cmwgLW8gL2V0Yy95dW0ucmVwb3MuZC9pbnRlcm5hbC5yZXBvIGh0dHA6Ly93d3cub3BlbnRsYy5jb20vZG93bmxvYWQvYW5zaWJsZV9ib290Y2FtcC9yZXBvL2ludGVybmFsLnJlcG8K', 'OS-EXT-STS:vm_state': 'active'}, 'hostId': '26c3d8074f9fab9d266b2a9243f2ee4f2531651afc35311e3290a8b2', 'config_drive': '', 'project_id': '4e07f423a12f437388a97a533bb9eef9', 'tenant_id': '4e07f423a12f437388a97a533bb9eef9', 'region': 'regionOne', 'cloud': 'openstack', 'az': 'nova', 'os-extended-volumes:volumes_attached': [], 'OS-EXT-AZ:availability_zone': 'nova', 'OS-EXT-SRV-ATTR:host': 'overcloud-novacompute-1.localdomain', 'OS-DCF:diskConfig': 'MANUAL', 'host_status': 'UP', 'OS-EXT-SRV-ATTR:hostname': 'frontend', 'OS-EXT-SRV-ATTR:hypervisor_hostname': 'overcloud-novacompute-1.localdomain', 'OS-EXT-SRV-ATTR:instance_name': 'instance-00000008', 'locked': False, 'OS-EXT-SRV-ATTR:kernel_id': '', 'OS-EXT-SRV-ATTR:launch_index': 0, 'OS-SRV-USG:launched_at': '2020-07-22T09:55:12.000000', 'OS-EXT-STS:power_state': 1, 'OS-EXT-SRV-ATTR:ramdisk_id': '', 'OS-EXT-SRV-ATTR:reservation_id': 'r-6exsemst', 'OS-EXT-SRV-ATTR:root_device_name': '/dev/vda', 'OS-SCH-HNT:scheduler_hints': None, 'OS-EXT-STS:task_state': None, 'OS-SRV-USG:terminated_at': None, 'trusted_image_certificates': None, 'OS-EXT-SRV-ATTR:user_data': 'IyEvYmluL2Jhc2gKY3VybCAtbyAvdG1wL29wZW5zdGFjay5wdWIgaHR0cDovL3d3dy5vcGVudGxjLmNvbS9kb3dubG9hZC9hbnNpYmxlX2Jvb3RjYW1wL29wZW5zdGFja19rZXlzL29wZW5zdGFjay5wdWIKY2F0IC90bXAvb3BlbnN0YWNrLnB1YiA+PiAvaG9tZS9jbG91ZC11c2VyLy5zc2gvYXV0aG9yaXplZF9rZXlzCmN1cmwgLW8gL2V0Yy95dW0ucmVwb3MuZC9pbnRlcm5hbC5yZXBvIGh0dHA6Ly93d3cub3BlbnRsYy5jb20vZG93bmxvYWQvYW5zaWJsZV9ib290Y2FtcC9yZXBvL2ludGVybmFsLnJlcG8K', 'OS-EXT-STS:vm_state': 'active'})
+
+TASK [Fail] **********************************************************************************************************************************************************************************
+skipping: [workstation-ddf0.blue.osp.opentlc.com]
+
+PLAY [localhost] *****************************************************************************************************************************************************************************
+
+TASK [Access website] ************************************************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Fail] **********************************************************************************************************************************************************************************
+skipping: [localhost]
+
+TASK [Success] *******************************************************************************************************************************************************************************
+ok: [localhost] => {
+    "msg": "Congrats Yours HW Assignment is completed"
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+workstation-ddf0.blue.osp.opentlc.com : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
