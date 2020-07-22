@@ -1,0 +1,3 @@
+- name: Create Project 
+  command: |
+    tower-cli project create --name "{{ proj_name }}"  --description "My project description" --organization "{{ org_name }}"  --scm-type "git" --scm-url "{{ scm_url }}"
