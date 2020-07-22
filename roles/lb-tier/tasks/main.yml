@@ -1,8 +1,8 @@
 ---
 - name: install HAProxy
-    yum:
-      name: haproxy 
-      state: latest
+  yum:
+    name: haproxy 
+    state: latest
 
 - name: Start and enable HAProxy
   service:
@@ -11,8 +11,8 @@
     enabled: true
 
 - name: configure haproxy
-    template:
-      src: ../templates/haproxy.cfg.j2
-      dest: /etc/haproxy/haproxy.cfg
-    notify: restart haproxy
+  template:
+    src: ../templates/haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+  notify: restart haproxy
 
