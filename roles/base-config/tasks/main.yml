@@ -8,10 +8,10 @@
     replace: 'Defaults  !requiretty'
     backup: yes
 
-- name: enable repos
-  debug:
-    msg: "Repo to be enabled"
+#- name: enable repos
+#  debug:
+#    msg: "Repo to be enabled"
  
-- name: install base tools and packages
-  debug:
-    msg: "Base tools installing tbd"
+#- name: install base tools and packages
+#  debug:
+#    msg: "Base tools installing tbd"
